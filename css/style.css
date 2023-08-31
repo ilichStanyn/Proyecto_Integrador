@@ -80,19 +80,30 @@ footer {
 }
 
 nav {
-    display: inline-flex;
+    display: flex;
+    padding: 20px 0 20px 0;
+    margin: 0 40px 0 40px;
 }
 
-li a {
-    color: var(--light-bg-solid);
+ul{
+    margin-left: auto;
 }
 
 ul, ol {
     display: inherit;
     list-style-type: none;
     gap: 2em;
-    
+    align-items: center;
 }
+
+li a {
+    color: var(--light-bg-solid);
+}
+
+.banner {
+    top: 144px;
+    height: 388px;
+} 
 
 p {
     font-size: 18px;
