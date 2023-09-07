@@ -75,18 +75,20 @@ footer {
     font-family: var(--alternative-font);
     color: var(--dark-solid);
     background-color: var(--dark-bg-solid);
-    max-width: 1200px;
+    /* max-width: 1440px; */
     margin: 0 auto;
+
 }
 
 nav {
     display: flex;
-    padding: 20px 0 20px 0;
-    margin: 0 40px 0 40px;
+    /* padding: 20px 0 20px 0; */
+    /* margin: 0 40px 0 40px; */
+    width: inherit;
 }
 
 ul{
-    margin-left: auto;
+    margin-right: 110px;
 }
 
 ul, ol {
@@ -112,4 +114,24 @@ p {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+
+header {
+    width: 100%;
+    height: 144px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+*{margin: 0;}
+
+/* .logoFunko {
+    margin-left: 110px;
+} */
+
+h1{
+    font-family: raleway;
+    
 }
