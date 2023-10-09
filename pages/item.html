@@ -1,11 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="../css/style.css">
     <title>Item</title>
 </head>
 <body>
-    
+    <!--Header-->
+    <header>
+        <nav class="navbar container">
+            <picture class="navbar__logo">
+                <a href="../index.html">
+                    <img src="../Multimedia/branding/logo_light_horizontal.svg" alt="">  
+                </a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item with-submenu">
+                    <a class="navbar__link with-icon" href="../pages/shop.html">SHOP<iconify-icon icon="ion:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Llaveros</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../pages/contact.html">CONTACTO</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../pages/login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="../pages/cart.html">
+                        <img src="../Multimedia/icons/cart-icon.svg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </nav>              
+    </header>
+
+    <!--Sección Carousel Ítem-->
+     </section class="slider container">
+        <h2 class="sliderItem__tittle">PRODUCTOS RELACIONADOS</h2>
+        <ul class="sliderItem__items">
+            <li class="sliderItem__item">
+                <article class="cardItem-item">
+                    <a class="cardItem-item__link" href="">
+                        <picture class="cardItem-item__cover">
+                            <span class="cardItem-item__tag">Nuevo</span>
+                            <img class="cardItem-item__img--front" src="../Multimedia/star-wars/trooper-1.webp" alt="Figura coleccionable FUNKO de STORMTROOPER LIGHTSABER">
+                            <img class="cardItem-item__img--back" src="../Multimedia/star-wars/trooper-box.webp" alt="Figura coleccionable FUNKO de STORMTROOPER LIGHTSABER en caja">
+                        </picture class="cardItem-item__cover">
+                        <div class="cardItem-item__content">
+                            <p class="cardItem-item__license">STAR WARS</p>
+                            <h4 class="cardItem-item__name">STORMTROOPER LIGHTSABER</h4>
+                            <p class="cardItem-item__price">$ 1799,99</p>
+                            <p class="cardItem-item__promo">3 CUOTAS SIN INTERÉS</p>
+                        </div>
+                    </a>
+                </article class="cardItem-item">
+            </li>
+            <li class="sliderItem__item">
+                <article class="cardItem-item">
+                    <a class="cardItem-item__link" href="">
+                        <picture class="cardItem-item__cover">
+                            <span class="cardItem-item__tag">Nuevo</span>
+                            <img class="cardItem-item__img--front" src="../Multimedia/pokemon/pidgeotto-1.webp" alt="Figura coleccionable FUNKO de PIDGEOTTO">
+                            <img class="cardItem-item__img--back" src="../Multimedia/pokemon/pidgeotto-box.webp" alt="Figura coleccionable FUNKO de PIDGEOTTO en caja">
+                        </picture class="cardItem-item__cover">
+                        <div class="cardItem-item__content">
+                            <p class="cardItem-item__license">POKEMON</p>
+                            <h4 class="cardItem-item__name">PIDGEOTTO</h4>
+                            <p class="cardItem-item__price">$ 1799,99</p>
+                            <p class="cardItem-item__promo">3 CUOTAS SIN INTERÉS</p>
+                        </div>
+                    </a>
+                </article class="cardItem-item">
+            </li>
+            <li class="sliderItem__item">
+                <article class="cardItem-item">
+                    <a class="cardItem-item__link" href="">
+                        <picture class="cardItem-item__cover">
+                            <span class="cardItem-item__tag">Nuevo</span>
+                            <img class="cardItem-item__img--front" src="../Multimedia/harry-potter/luna-1.webp" alt="Figura coleccionable FUNKO de LUNA LOVEGOOD LION MASK">
+                            <img class="cardItem-item__img--back" src="../Multimedia/harry-potter/luna-box.webp" alt="Figura coleccionable FUNKO de LUNA LOVEGOOD LION MASK en caja">
+                        </picture class="cardItem-item__cover">
+                        <div class="cardItem-item__content">
+                            <p class="cardItem-item__license">HARRY POTTER</p>
+                            <h4 class="cardItem-item__name">LUNA LOVEGOOD LION MASK</h4>
+                            <p class="cardItem-item__price">$ 1799,99</p>
+                            <p class="cardItem-item__promo">3 CUOTAS SIN INTERÉS</p>
+                        </div>
+                    </a>
+                </article class="cardItem-item">
+            </li>
+        </ul>
+ <section>
+    <!--Footer-->
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__item">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../pages/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../pages/registrarse.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../pages/login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link"  href="../pages/contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <img src="../Multimedia/branding/isotype.svg" alt="">
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 </body>
 </html>
