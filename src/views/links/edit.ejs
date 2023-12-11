@@ -1,0 +1,61 @@
+
+<head>
+    <%- include("../partials/headerAdmin") %>
+</head>
+
+<main class ="container">
+
+    <section class="contact">    
+
+       <% data.forEach(product=> { %>
+        <p>Editar el producto <%= product.product_name %></p>
+
+       <div id="form-content">
+        <div id="form-head">
+    
+            <p>Detalle del Producto a Editar</p>
+        
+            <form id="formulario" class="custom-form" action="/links/edit/<%= product.product_id %>" method="post">
+                <div class="form-data"> 
+                    <input type="text" name="sku" value="<%= product.sku %>">
+                    <input type="text" name="product_name" value="<%= product.product_name %>">
+                    <input type="text" name="product_description" value="<%= product.product_description%>">
+                </div>
+    <!--  
+                <input type="text" name="category_id">
+                <input type="text" name="licence_id">
+    
+    -->
+    
+                <div class="form-select">
+                    <select type="InputSelect" name="form-select category" id="category">
+                    <option disabled="">Ingresa una categoría</option>
+                    <option value="1">Funkos</option>
+                    <option value="2">Remeras</option>
+                    <option value="3">LLaveros</option>    
+                </select>
+                </div>
+                <div class="form-select">
+                    <select type="InputSelect" name="form-select licence" id="licence">
+                    <option disabled="">Ingresa un tipo de Licencia</option>
+                    <option value="1">Pokemón</option>
+                    <option value="2">Star-Wars</option>
+                    <option value="3">Harry-Potter</option>    
+                </select>
+    
+                </div>
+                <input type="InputName" name="price" value="<%= product.price%>">
+                <input type="InputCorreo" name="stock" value="<%= product.stock%>">
+            
+                <input type="hidden" id="licence_id" name="licence_id"  value="1"></input>
+                <input type="hidden" id="category_id" name="category_id" value="1"></input>
+                <button  class="btn-contact" type="submit">Enviar</button>
+            </form>          <% }) %>         
+        </div>
+        
+        </div>
+    </section>
+</main>
+
+
+<%- include("../partials/footer") %>

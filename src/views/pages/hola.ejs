@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+  <style>
+  p { color:blue; margin:8px; }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <input type="text" id="texto" value="1"/>
+  <p></p>
+
+<script>
+var variable =document.getElementById('category').value;
+document.writeln('<input type="text" name="numero" id="txt_numero" value="' +
+    variable + '" ><br>');
+
+$("input").keyup(function () {
+      var value = $(this).val();
+      $("p").text(value);
+    }).keyup();
+</script>
+

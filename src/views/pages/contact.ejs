@@ -1,0 +1,43 @@
+    <!-- Header -->
+    <%- include("../partials/header") %>
+
+<main class ="container">
+
+<section class="contact">
+
+<div id="form-content">
+<div id="form-head">
+    <h1>Estemos en contacto</h1>
+    <p>Elige una opción</p>
+    <h1>Muchas Gracias!</h1>
+    <p>Te contestaremos lo más pronto posible</p>
+
+    <form class="custom-form" action="/contact" method="post">
+        <div class="form-data"> 
+            <input type="InputName" name="user" placeholder="Escribe tu nombre">
+            <input type="InputCorreo" name="correo" placeholder="Escribe tu correo electrónico">
+        </div>
+        <div class="form-select">
+            <select name="InputSelect" name="form-select">
+            <option disabled="">Enviar una solicitud de trabajo</option>
+            <option>Solicitar un reclamo por una compra</option>
+            <option>Realizar sugerencias o mejoras</option>
+            <option>Otros </option>    
+        </select>
+        </div>
+        <textarea name="InputMsg" id="mensaje" cols="30" rows="10" placeholder="En que podemos ayudarte"></textarea>
+        
+        <button class="btn-contact" type="submit">Enviar</button>
+    </form>
+</div>
+
+</div>
+
+
+</section>
+</main>
+
+
+
+    <!--Footer-->
+    <%- include("../partials/footer") %>

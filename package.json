@@ -1,0 +1,33 @@
+{
+  "name": "proyecto_integrador-gus23",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/",
+    "start": "node src/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "express-mysql-session": "^3.0.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^5.3.1",
+    "handlebars": "^4.7.8",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "req-flash": "^0.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
