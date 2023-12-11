@@ -1,0 +1,25 @@
+    <!--Header -->
+    <%- include("../partials/header") %>
+
+    <!--login -->
+
+    <div id="form-content">
+        <div id="form-login">
+            <h1>INGRESAR A MI CUENTA</h1>
+            <% if ( message ) { %>
+                 <div class="flash-err"><%= message %></div>
+            <% } %>
+            <form class="custom-login" action="/signin" method="post">
+                <div class="form-data-login"> 
+                    <input type="text" name="username" placeholder="Escribe tu nombre"> </br>
+                    <input type="password" name="password" placeholder="Escribe tu Contraseña">
+                </br>
+                <button class="btn-login" type="submit">Ingresar</button>
+            </form>
+            <h2>Aun no estas registrado?</h2>
+            <a class="btn-signup" href="/signup">Registrate</a>
+        </div>
+        
+        </div>
+    <!-- Footer-->
+    <%- include("../partials/footer") %>

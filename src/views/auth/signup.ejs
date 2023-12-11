@@ -1,0 +1,20 @@
+<%- include("../partials/header") %>
+    <div id="form-content">
+        <div id="form-login">
+            <h1>Complete los datos para el registro</h1>
+            <% if ( message ) { %>
+                <div class="flash"><%= message %></div>
+            <% } %>
+            <form class="custom-login" action="/signup" method="post">
+                <div class="form-data-login"> 
+                    <input type="text" name="username" placeholder="Escribe tu nombre"> </br>
+                    <input type="text" name="email" placeholder="Escribe tu correo"> </br>
+                    <input type="password" name="password" placeholder="Escribe tu Contraseña">
+                </br>
+                <button class="btn-login" type="submit">Ingresar</button>
+            </form>
+        </div>
+        
+        </div>
+
+        <%- include("../partials/footer") %>

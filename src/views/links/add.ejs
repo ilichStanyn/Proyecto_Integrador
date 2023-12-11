@@ -1,0 +1,60 @@
+
+<head>
+    <%- include("../partials/headerAdmin") %>
+</head>
+
+<main class ="container">
+
+    <section class="contact">
+    
+    <div id="form-content">
+    <div id="form-head">
+
+        <p>Ingresa el nuevo producto</p>
+    
+        <form id="formulario" class="custom-form" action="/links/add" method="post">
+            <div class="form-data"> 
+                <input type="text" name="sku" placeholder="Escribe el sku del producto">
+                <input type="text" name="product_name" placeholder="Escribe el nombre del producto">
+                <input type="text" name="product_description" placeholder="Escribe una descripción">
+            </div>
+<!--  
+            <input type="text" name="category_id">
+            <input type="text" name="licence_id">
+
+-->
+
+            <div class="form-select">
+                <select type="InputSelect" name="form-select category" id="category">
+                <option disabled="">Ingresa una categoría</option>
+                <option value="1">Funkos</option>
+                <option value="2">Remeras</option>
+                <option value="3">LLaveros</option>    
+            </select>
+            </div>
+            <div class="form-select">
+                <select type="InputSelect" name="form-select licence" id="licence">
+                <option disabled="">Ingresa un tipo de Licencia</option>
+                <option value="1">Pokemón</option>
+                <option value="2">Star-Wars</option>
+                <option value="3">Harry-Potter</option>    
+            </select>
+
+            </div>
+            <input type="InputName" name="price" placeholder="Escribe el precio">
+            <input type="InputCorreo" name="stock" placeholder="Unidades">
+        
+           <input type="hidden" id="licence_id" name="licence_id"  value="1"></input>
+            <input type="hidden" id="category_id" name="category_id" value="1"></input>
+            <button  class="btn-contact" type="submit">Enviar</button>
+        </form>           
+    </div>
+    
+    </div>
+    
+    
+    </section>
+    </main>
+
+
+<%- include("../partials/footer") %>

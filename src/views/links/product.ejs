@@ -1,0 +1,66 @@
+
+<head>
+    <%- include("../partials/headerAdmin") %>
+</head>
+
+    <body>
+    <h1 class="title-admin">Admin - Productos</h1>
+
+    <div class="container">
+        <form action="#"  method="post"><tr aria-colspan="10">
+            <td colspan="10" ><input type="text" class="input-search" aria-label="Text input with dropdown button" name="product_name" id="product_name">
+            <a href=""><iconify-icon icon="icon-park-outline:search" style="color: #f33333;"></iconify-icon></a>
+            </td></tr>
+        </form>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">SKU</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">descripcion</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Lincecia</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col" colspan="3">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(product=> { %>
+                    <tr>
+                        <td>
+                            <%= product.product_id %>
+                        </td>
+                        <td>
+                            <%= product.sku %>
+                        </td>
+                        <td>
+                            <%= product.product_name %>
+                        </td>
+                        <td>
+                            <%= product.product_description %>
+                        </td>
+                        <td>
+                            <%= product.price %>
+                        </td>
+                        <td>
+                            <%= product.stock %>
+                        </td>
+                        <td>
+                            <%= product.licence_id %>
+                        </td>
+                        <td>
+                            <%= product.category_id %>
+                        </td>
+                        <td><a href="./edit/<%= product.product_id%>"><iconify-icon icon="bx:edit" style="color: #1D84B5;" width="36" height="36"></iconify-icon></a></td>
+                        <td><a href="./delete/<%= product.product_id %>"><iconify-icon icon="material-symbols:delete-outline" style="color: #FF3333;" width="36" height="36"></iconify-icon></iconify-icon></a></td>
+                    </tr>
+                    <% }) %>
+                    <tr><td colspan="10" class="row-add"><a href="./add"><iconify-icon icon="material-symbols-light:create-new-folder-sharp" style="color: #5ac4c4;" width="36" height="36"></iconify-icon></iconify-icon><h4 class="h4-add">Agregar un Producto</h4></a></td></tr>
+            </tbody>
+        </table>
+    </div>
+        
+    </body>
+    <%- include("../partials/footer") %>
