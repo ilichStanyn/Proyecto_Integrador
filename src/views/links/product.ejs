@@ -9,7 +9,7 @@
     <div class="container">
         <form action="#"  method="post"><tr aria-colspan="10">
             <td colspan="10" ><input type="text" class="input-search" aria-label="Text input with dropdown button" name="product_name" id="product_name">
-            <a href=""><iconify-icon icon="icon-park-outline:search" style="color: #f33333;"></iconify-icon></a>
+            <a href="#"><iconify-icon icon="icon-park-outline:search" style="color: #f33333;"></iconify-icon></a>
             </td></tr>
         </form>
         <table class="table table-striped">
@@ -48,13 +48,13 @@
                             <%= product.stock %>
                         </td>
                         <td>
-                            <%= product.licence_id %>
+                            <%= product.licence_name %>
                         </td>
                         <td>
-                            <%= product.category_id %>
+                            <%= product.category_name %>
                         </td>
                         <td><a href="./edit/<%= product.product_id%>"><iconify-icon icon="bx:edit" style="color: #1D84B5;" width="36" height="36"></iconify-icon></a></td>
-                        <td><a href="./delete/<%= product.product_id %>"><iconify-icon icon="material-symbols:delete-outline" style="color: #FF3333;" width="36" height="36"></iconify-icon></iconify-icon></a></td>
+                        <td><a  href="./delete/<%= product.product_id %>"><iconify-icon icon="material-symbols:delete-outline" style="color: #FF3333;" width="36" height="36"></iconify-icon></iconify-icon></a></td>
                     </tr>
                     <% }) %>
                     <tr><td colspan="10" class="row-add"><a href="./add"><iconify-icon icon="material-symbols-light:create-new-folder-sharp" style="color: #5ac4c4;" width="36" height="36"></iconify-icon></iconify-icon><h4 class="h4-add">Agregar un Producto</h4></a></td></tr>

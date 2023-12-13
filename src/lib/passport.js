@@ -5,6 +5,9 @@ const LocalStrategy = require('passport-local').Strategy;
 const pool = require('../database');
 const { Result } = require('express-validator');
 const helpers = require('./helpers');
+const { check } = require('express-validator/check');
+
+
 
 passport.use('local.signin', new LocalStrategy({
     usernameField: 'username',
@@ -12,10 +15,12 @@ passport.use('local.signin', new LocalStrategy({
     passReqToCallback: true
 }, async (req, username, password, done) => {
     const rows = await pool.query('SELECT * FROM USER WHERE USERNAME = ?', [username]);
+   
     if (rows.length > 0) {
-        const user = rows[0];
-        const validPassword = await helpers.matchPassword(password, user.password)
-        if (validPassword)  {
+      const user = rows[0];
+      const ValidPassword = await helpers.matchPassword(password, user.password)
+
+        if (ValidPassword)  {
           done(null, user, req.flash('success', 'Bienvenido.... ' + user.username));
         } else {
           done(null, false, req.flash('message', 'Contraseña incorrecta'));
@@ -31,11 +36,12 @@ passport.use('local.signup', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true
 }, async (req,username, password, done) =>{
-    const {email} = req.body;
+    const {firstname, lastname} = req.body;
     let newUser = {
         username,
         password,
-        email
+        firstname,
+        lastname
     };
     newUser.password = await helpers.encryptPassword(password);
     const result = await pool.query('INSERT INTO user SET?', newUser);
@@ -48,12 +54,15 @@ passport.use('local.signup', new LocalStrategy({
 // ver documentacion https://www.passportjs.org/concepts/authentication/sessions/
 
 passport.serializeUser((user, done) => {
-    done(null, user.id);
+    done(null, user.username);
+    console.log(passport.serializeUser);
+    console.log(user.username);
   });
+
 
 // deserailize session porque sino va tirar un error de out of session cuando actualice la web
 
-  passport.deserializeUser(async (id, done) => {
-    const rows = await pool.query('SELECT * FROM USER WHERE USER_ID = ?', [id]);
+  passport.deserializeUser(async (user, done) => {
+    const rows = await pool.query('SELECT * FROM USER WHERE USERNAME = ?', [user]);
     done(null, rows[0]);
   });

@@ -103,10 +103,10 @@ GO
 
 CREATE TABLE USER (
   user_id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  username varchar(16) NOT NULL,
-  lastname varchar(80) NOT NULL,
-  email varchar(255) NOT NULL,
-  password varchar(32) NOT NULL,
+  username varchar(150) NOT NULL,
+  password varchar(255) NOT NULL,
+  firstname varchar(120) NOT NULL,
+  lastname varchar(120) NOT NULL,
   is_Admin BIT(1) DEFAULT 0,
   create_time timestamp NULL DEFAULT current_timestamp
 );

@@ -1,5 +1,109 @@
     <!--Header -->
     <%- include("../partials/header") %>
 
+
+
+        <main class="car__main"><!--Inicio de Main-->
+            <section class="car__title"> 
+                <h2 class="car__title-text ">CARRITO DE COMPRAS</h2>
+                <hr class="car__title-line">
+            </section>
+    
+            <section class="car__description container">
+                <div class="car__description-table">
+                    <ul class="car__description-tbody">
+                        <li class="car__description-item">DETALLE DE PRODUCTO</li>
+                        <li class="car__description-item">Cantidad</li>
+                        <li class="car__description-item">TOTAL</li>
+                    </ul>
+                </div>
+            </section>
+    
+            <section class="car__product container">
+                <article class="product__card">
+                    <div class="product__card-content">
+                       <div class="product__img">
+                           <img src="../img/star-wars/baby-yoda-1.webp" alt="">
+                       </div>
+                       <div class="product__description">
+                           <h2 class="product__card-title">BABY YODA BLUEBALL</h2>
+                           <p class="product__card-name">STAR WARS</p>
+                           <p class="product__card-price">precio: $ 1799,99</p>
+                       </div>
+                    
+                    </div>
+                  
+                    <div class="product__card-addordecrease">
+                        <input class="product__card-counter" type="number" placeholder="0">
+                    </div>
+                    <div class="product__card-unitprice">
+                        <p class="product__card-totalprice">$ 3599,98</p>
+                    </div>
+                    <div class="product__card-discard">
+                        <button class="product__card-btndelete">X</button>
+                    </div>
+                </article>
+    
+                <article class="product__card">
+                    <div class="product__card-content">
+                       <div class="product__img">
+                           <img src="../img/pokemon/charmander-1.webp" alt="">
+                       </div>
+                       <div class="product__description">
+                           <h2 class="product__card-title">CHARMANDER SMILEY</h2>
+                           <p class="product__card-name">POKEMON</p>
+                           <p class="product__card-price">precio: $ 1799,99</p>
+                       </div>
+                    
+                    </div>
+                  
+                    <div class="product__card-addordecrease">
+                        <input class="product__card-counter" type="number" placeholder="0">
+                    </div>
+                    <div class="product__card-unitprice">
+                        <p class="product__card-totalprice">$ 3599,98</p>
+                    </div>
+                    <div class="product__card-discard">
+                        <button class="product__card-btndelete">X</button>
+                    </div>
+                </article> 
+            </section>
+    
+            <section class="car__resumen">
+                <div class="car__resumen-title ">
+                    <h2>RESUMEN</h2>
+                    <hr>
+                </div>
+    
+                <div class="resumen__content">
+                    <div class="resumen__item flex__row">
+                        <p class="resumen__item-text">CANTIDAD DE ELEMENTOS</p>
+                        <p class="resumen__item-text">3</p>
+                    </div>
+                    <div class="resumen__subtotal flex__row">
+                        <p class="resumen__item-text">SUBTOTAL</p>
+                        <p class="resumen__item-text">$ 5.399,97</p>
+                    </div>
+                    <div class="resumen__costdelivery flex__row">
+                        <p class="resumen__item-text">ENVIO</p>
+                        <p class="resumen__item-text">$ 0,00</p>
+                    </div>
+                    <hr class="resumen__line">
+                    <div class="resumen__total flex__row">
+                        <p class="resumen__item-text">TOTAL</p>
+                        <p class="resumen__item-text">$ 5.399,97</p>
+                    </div>
+                </div>
+    
+                <div class="resumen__btn">
+                    <button >IR A PAGAR</button>
+                </div>
+    
+            </section>
+    
+            
+        </main>
+
+    
     <!--Footer-->
     <%- include("../partials/footer") %>

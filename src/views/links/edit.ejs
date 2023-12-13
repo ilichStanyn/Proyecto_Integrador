@@ -8,52 +8,54 @@
     <section class="contact">    
 
        <% data.forEach(product=> { %>
-        <p>Editar el producto <%= product.product_name %></p>
 
        <div id="form-content">
         <div id="form-head">
     
             <p>Detalle del Producto a Editar</p>
         
-            <form id="formulario" class="custom-form" action="/links/edit/<%= product.product_id %>" method="post">
-                <div class="form-data"> 
-                    <input type="text" name="sku" value="<%= product.sku %>">
-                    <input type="text" name="product_name" value="<%= product.product_name %>">
-                    <input type="text" name="product_description" value="<%= product.product_description%>">
-                </div>
-    <!--  
-                <input type="text" name="category_id">
-                <input type="text" name="licence_id">
-    
-    -->
-    
-                <div class="form-select">
-                    <select type="InputSelect" name="form-select category" id="category">
-                    <option disabled="">Ingresa una categoría</option>
-                    <option value="1">Funkos</option>
-                    <option value="2">Remeras</option>
-                    <option value="3">LLaveros</option>    
-                </select>
-                </div>
-                <div class="form-select">
-                    <select type="InputSelect" name="form-select licence" id="licence">
-                    <option disabled="">Ingresa un tipo de Licencia</option>
-                    <option value="1">Pokemón</option>
-                    <option value="2">Star-Wars</option>
-                    <option value="3">Harry-Potter</option>    
-                </select>
-    
-                </div>
-                <input type="InputName" name="price" value="<%= product.price%>">
-                <input type="InputCorreo" name="stock" value="<%= product.stock%>">
-            
-                <input type="hidden" id="licence_id" name="licence_id"  value="1"></input>
-                <input type="hidden" id="category_id" name="category_id" value="1"></input>
-                <button  class="btn-contact" type="submit">Enviar</button>
-            </form>          <% }) %>         
         </div>
         
         </div>
+
+        <div class="logRegBG">
+            <p class="logRegTitle">Editar el producto <%= product.product_name %></p> 
+            <p class="LogRegSubTitle">Completa el formulario para realizar los cambios</p>
+            <div class="bodyRegLog">
+                <ul class="labelsContainer">
+                    <li class="labelRegLog">Sku: </li>
+                    <li class="labelRegLog">Nombre de Producto: </li>
+                    <li class="labelRegLog">Descripción: </li>
+                    <li class="labelRegLog">Licencia: </li>
+                    <li class="labelRegLog">Categoría: </li>
+                    <li class="labelRegLog">Precio: </li>
+                    <li class="labelRegLog">Stock: </li>
+                    <li class="labelRegLog">Imagen principal: </li>
+                    <li class="labelRegLog">Imagen Alternativa: </li>
+                </ul>
+                <form class="custom-form" action="/links/edit/<%= product.product_id %>" method="post">
+                    <input type="text" class="blankField" name="sku" value="<%= product.sku %>"><br>       
+                    <input type="text" class="blankField" name="product_name" value="<%= product.product_name %>"><br>
+                    <input type="text" class="blankField" name="product_description" value="<%= product.product_description%>"><br>
+                    <div class="form-select" class="blankField">
+                        <select name="licence_id" selected="<%= product.licence_id %>">
+                        <option name="licence_id" value="1" >Pokemon</option>
+                        <option name="licence_id" value="2">star-wars</option>
+                        <option name="licence_id" value="3">Harry Potter </option>    
+                    </select></br></br>
+                    
+                        <select name="category_id"  selected="<%= product.category_id %>">
+                        <option name="category_id" value="1" >Funkos</option>
+                        <option name="category_id" value="2">Remeras</option>
+                        <option name="category_id" value="3">Llaveros </option>    
+                    </select> </br></div>
+                    <input type="text" class="blankField"name="price" value="<%= product.price %>"><br>
+                    <input type="text" class="blankField"name="stock" value="<%= product.stock %>"><br>
+                    <input type="text" class="blankField" name="image_front" value="<%= product.image_front %>"><br>
+                    <input type="text" class="blankField" name="image_back" value="<%= product.image_back %>"><br>
+                    <input type="submit" value="Evniar Cambios" class="botonRojo">
+                </form>   <% }) %>  
+            </div>
     </section>
 </main>
 

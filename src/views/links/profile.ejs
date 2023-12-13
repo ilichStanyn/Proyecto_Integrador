@@ -1,15 +1,29 @@
 <%- include("../partials/headerAdmin") %>
+    <!--Link CSS-->
+    <link rel="stylesheet" href="/css/profile.css" />
+
+    <div class="container collection__title">
+
+        Bievenido a su perfil <%= user.firstname %>
+    </div>
 
 
-<div class="container collection__title">
-
-    Bievenido a su perfil <%= user.username %>
-</div>
-    <img class="img-profile" src="./img/pokemon/pikachu-1.webp" alt="">
 
     </a>
 
-
+    <div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
+        <div class="card p-4"> <div class=" image d-flex flex-column justify-content-center align-items-center"> 
+            <button class="btn btn-secondary"> 
+                <img src="./img/pokemon/pikachu-1.webp" height="100" width="100" />
+            </button> <span class="name mt-3"><%= user.username %></span> 
+            <div class="d-flex flex-row justify-content-center align-items-center gap-2"> 
+                <span class="idd1">Oxc4c16a645_b21a</span> <span><i class="fa fa-copy"></i></span> </div>
+                 <div class="d-flex flex-row justify-content-center align-items-center mt-3"> <span class="number">1069 <span class="follow">Followers</span></span> </div>
+                  <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button> </div> 
+                  <div class="text perfil-3"> <%= user.firstname %> este es tu perfil de Funko Shop<br>
+                    <br> Espero que te diviertas. El equipo de Funko Shop.  </div>
+               </div> </div>
+</div>
 
 
         <%- include("../partials/footer") %>

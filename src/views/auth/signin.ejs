@@ -1,25 +1,35 @@
-    <!--Header -->
-    <%- include("../partials/header") %>
+    <!--Header-->
+<%- include("../partials/header") %>
 
-    <!--login -->
+<!-- Login -->
 
-    <div id="form-content">
-        <div id="form-login">
-            <h1>INGRESAR A MI CUENTA</h1>
-            <% if ( message ) { %>
-                 <div class="flash-err"><%= message %></div>
-            <% } %>
-            <form class="custom-login" action="/signin" method="post">
-                <div class="form-data-login"> 
-                    <input type="text" name="username" placeholder="Escribe tu nombre"> </br>
-                    <input type="password" name="password" placeholder="Escribe tu Contraseña">
-                </br>
-                <button class="btn-login" type="submit">Ingresar</button>
-            </form>
-            <h2>Aun no estas registrado?</h2>
-            <a class="btn-signup" href="/signup">Registrate</a>
-        </div>
+<div class="logRegBG">
+    <% if ( message ) { %>
+        <div class="flash-err"><%= message %></div>
+   <% } %>
+    <p class="logRegTitle">INGRESAR A MI CUENTA</p>     
+    <div class="bodyRegLog">
+        <ul class="labelsContainer">
+            <li class="labelRegLog">Email: </li>
+            <li class="labelRegLog">Contraseña: </li>
+        </ul>
+        <form action="/signin" method="post">
+            <input type="email" class="blankField" name="username" placeholder="johndoe@correo.com"><br>
+            <input type="password" class="blankField" name="password" placeholder="•••••••••"><br>
         
-        </div>
-    <!-- Footer-->
-    <%- include("../partials/footer") %>
+    </div>
+    <div>    
+        <input type="submit" value="Ingresar" class="botonRojo">
+        <input type="checkbox" id="termsBox" name="termsBox" />
+            <label for="terms" id="acepto">Recordarme</label>
+    </div></form>
+    <div>
+        <a href="#" id="olvidePass">Olvidé mi contraseña</a>
+    </div>  
+</div>
+
+<!--Footer-->
+<%- include("../partials/footer") %>
+
+
+

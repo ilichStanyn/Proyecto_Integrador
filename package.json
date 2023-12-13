@@ -1,7 +1,6 @@
 {
   "name": "proyecto_integrador-gus23",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,9 +24,11 @@
     "mysql": "^2.18.1",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "req-flash": "^0.0.3"
+    "req-flash": "^0.0.3",
+    "yes": "^1.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
-  }
+  },
+  "description": ""
 }

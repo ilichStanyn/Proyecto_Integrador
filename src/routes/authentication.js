@@ -9,11 +9,24 @@ router.get('/signup',  (req, res) => {
   res.render('auth/signup');
 });
 
-router.post('/signup', passport.authenticate('local.signup', {
+router.post('/signup', (req, res, next) => { 
+  req.check('firstname', 'el nombre es requerido').notEmpty();
+  req.check('username', 'el usuario es requerido').notEmpty();
+  req.check('password', 'La contraseña es obligatoria').notEmpty();
+  req.check('password1', 'Debe confirme la contraseña elegida').notEmpty();
+  const errors = req.validationErrors();
+  if (errors.length > 0) {
+    console.log(errors);
+    req.flash('message', errors[0].msg);
+    res.redirect('/signup');
+  } 
+passport.authenticate('local.signup', {
   successRedirect: '/profile',
   failureRedirect: '/signup',
   failureFlash: true
-}));
+})
+  (req, res, next);
+});
 
 // SINGIN
 router.get('/signin', (req, res) => {
@@ -21,14 +34,14 @@ router.get('/signin', (req, res) => {
 });
 
 router.post('/signin', (req, res, next) => { 
-  /*req.check('username', 'El usuario es requerido').notEmpty();
+  req.check('username', 'El usuario es requerido').notEmpty();
   req.check('password', 'La contraseña es requerida').notEmpty();
   const errors = req.validationErrors();
   if (errors.length > 0) {
     console.log(errors);
     req.flash('message', errors[0].msg);
     res.redirect('/signin');
-  } */
+  } 
   passport.authenticate('local.signin', {
     successRedirect: '/profile',
     failureRedirect: '/signin',

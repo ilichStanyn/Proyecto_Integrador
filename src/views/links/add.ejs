@@ -3,57 +3,53 @@
     <%- include("../partials/headerAdmin") %>
 </head>
 
-<main class ="container">
+    <main class ="container">
 
-    <section class="contact">
+        <section class="contact">    
     
-    <div id="form-content">
-    <div id="form-head">
+            <div class="logRegBG">
+                <p class="logRegTitle">Agregar un producto </p> 
+                <p class="LogRegSubTitle">Completa el formulario que esta debajo</p>
+                <div class="bodyRegLog">
+            
+                    <ul class="labelsContainer">
+                        <li class="labelRegLog">Sku: </li>
+                        <li class="labelRegLog">Nombre de Producto: </li>
+                        <li class="labelRegLog">Descripción: </li>
+                        <li class="labelRegLog">Licencia: </li>
+                        <li class="labelRegLog">Categoría: </li>                        
+                        <li class="labelRegLog">Precio: </li>
+                        <li class="labelRegLog">stock: </li>
+                        <li class="labelRegLog">Imagen principal: </li>
+                        <li class="labelRegLog">Imagen Alternativa: </li>
+                    </ul>
+                    <form class="custom-form" action="/links/add" method="post">
+                        <input type="text" class="blankField" name="sku" placeholder="escribe el número del sku"><br>       
+                        <input type="text" class="blankField" name="product_name" placeholder=""><br>
+                        <input type="text" class="blankField" name="product_description" placeholder=""></br>
+                        <div class="form-select" class="blankField"><br>
+                            <select name="licence_id" >
+                            <option name="licence_id" value="1" >Pokemon</option>
+                            <option name="licence_id" value="2">star-wars</option>
+                            <option name="licence_id" value="3">Harry Potter </option>    
+                        </select><br> 
+                        <select name="category_id"  ><br>
+                            <option name="category_id" value="1" >Funkos</option><br>
+                            <option name="category_id" value="2">Remeras</option><br>
+                            <option name="category_id" value="3">Llaveros </option>  <br>  
+                        </select> </div><br>
+                        <input type="text" class="blankField"name="price" placeholder=""><br>
+                        <input type="text" class="blankField"name="stock" placeholder=""><br>
+                        <input type="text" class="blankField" name="image_front" placeholder=""><br>
+                        <input type="text" class="blankField" name="image_back" placeholder=""><br>
 
-        <p>Ingresa el nuevo producto</p>
-    
-        <form id="formulario" class="custom-form" action="/links/add" method="post">
-            <div class="form-data"> 
-                <input type="text" name="sku" placeholder="Escribe el sku del producto">
-                <input type="text" name="product_name" placeholder="Escribe el nombre del producto">
-                <input type="text" name="product_description" placeholder="Escribe una descripción">
-            </div>
-<!--  
-            <input type="text" name="category_id">
-            <input type="text" name="licence_id">
 
--->
 
-            <div class="form-select">
-                <select type="InputSelect" name="form-select category" id="category">
-                <option disabled="">Ingresa una categoría</option>
-                <option value="1">Funkos</option>
-                <option value="2">Remeras</option>
-                <option value="3">LLaveros</option>    
-            </select>
-            </div>
-            <div class="form-select">
-                <select type="InputSelect" name="form-select licence" id="licence">
-                <option disabled="">Ingresa un tipo de Licencia</option>
-                <option value="1">Pokemón</option>
-                <option value="2">Star-Wars</option>
-                <option value="3">Harry-Potter</option>    
-            </select>
+                        <input type="submit" value="Evniar Cambios" class="botonRojo">
+                    </form>   
+                </div>
+        </section>
 
-            </div>
-            <input type="InputName" name="price" placeholder="Escribe el precio">
-            <input type="InputCorreo" name="stock" placeholder="Unidades">
-        
-           <input type="hidden" id="licence_id" name="licence_id"  value="1"></input>
-            <input type="hidden" id="category_id" name="category_id" value="1"></input>
-            <button  class="btn-contact" type="submit">Enviar</button>
-        </form>           
-    </div>
-    
-    </div>
-    
-    
-    </section>
     </main>
 
 

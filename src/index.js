@@ -43,13 +43,6 @@ app.use(expressValidator());
 
 
 // Global variables
-/*app.use((req, res, next) => {
-    app.locals.message = req.flash('message');
-    app.locals.success = req.flash('success');
-    app.locals.user = req.user;
-    next();
-  });*/
-
   app.use(async (req, res, next) => {
     app.locals.success = await req.flash("success");
     app.locals.message = req.flash('message');
@@ -72,8 +65,8 @@ app.use('/public', require('./routes/index'));
 app.get('/pages/contact', (req, res)=> res.render(__dirname + '/views/pages/contact.ejs'));
 app.get('/pages/item', (req, res)=> res.render(__dirname + '/views/pages/item.ejs'));
 app.get('/pages/login', (req, res)=> res.render(__dirname + '/views/pages/login.ejs'));
-app.get('/pages/shop', (req, res)=> res.render(__dirname + '/views/pages/shop.ejs'));
-app.get('/pages/hola', (req, res)=> res.render(__dirname + '/views/pages/hola.ejs'));
+/*app.get('/pages/shop', (req, res)=> res.render(__dirname + '/views/pages/shop.ejs'));*/
+app.get('/pages/cart', (req, res)=> res.render(__dirname + '/views/pages/cart.ejs'));
 
 
 app.get('/', (req,res)=>{

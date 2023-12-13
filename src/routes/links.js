@@ -16,7 +16,7 @@ router.get('/add', isLoggedIn ,(req,res)=> {
 
 
 router.post('/add', async (req,res)=> {
-    const { sku, product_name, product_description, price, stock, licence_id, category_id } = req.body;
+    const { sku, product_name, product_description, price, stock, licence_id, category_id, image_front, image_back } = req.body;
     const NewProduct = {
         sku, 
         product_name, 
@@ -24,7 +24,10 @@ router.post('/add', async (req,res)=> {
         price, 
         stock,
         licence_id,
-        category_id
+        category_id,
+        image_front,
+        image_back
+
     };
     
     product = await pool.query('INSERT INTO PRODUCT SET ?', NewProduct);
@@ -33,9 +36,15 @@ router.post('/add', async (req,res)=> {
 });
 
 
-router.get('/product', async(req,res)=>{
-    const product = await pool.query('SELECT * FROM PRODUCT');
+router.get('/product', isLoggedIn, async(req,res)=>{
+    const product = await pool.query('SELECT * FROM PRODUCT inner join LICENCE ON (Product.licence_id = licence.licence_id) inner join CATEGORY ON (Product.category_id = category.category_id) ');
     res.render('links/product',{data:product});
+    
+})
+
+router.get('/shop', async(req,res)=>{
+    const product = await pool.query('SELECT * FROM PRODUCT inner join LICENCE ON (Product.licence_id = licence.licence_id) order by product.product_id desc LIMIT 9 ');
+    res.render('links/shop',{data:product});
     
 })
 
@@ -59,7 +68,7 @@ router.get('/edit/:id', isLoggedIn,  async (req, res) => {
 
 router.post('/edit/:id', async (req, res) => {
     const { id } = req.params;
-    const { sku, product_name, product_description, price, stock, licence_id, category_id } = req.body;
+    const { sku, product_name, product_description, price, stock, licence_id, category_id, image_front, image_back } = req.body;
     const ProductView = {
         sku, 
         product_name, 
@@ -67,7 +76,9 @@ router.post('/edit/:id', async (req, res) => {
         price, 
         stock,
         licence_id,
-        category_id
+        category_id,
+        image_front,
+        image_back
     };
     await pool.query('UPDATE PRODUCT SET ? WHERE PRODUCT_ID = ?', [ProductView, id]);
     console.log(ProductView);
@@ -76,11 +87,11 @@ router.post('/edit/:id', async (req, res) => {
 });
 
 // sentencia para buscar
+
 /*
-router.get('/search', async (req, res) => {
-    const { id } = req.params;
-    const {product_name} = req.body;
-    const Product = await pool.query("SELECT * FROM PRODUCT WHERE PRODUCT_NAME LIKE '%"+ [product_name]+"%'");
+router.get('/links/product/:product_name', async (req, res) => {
+    const {product_name} = req.params
+      const Product = await pool.query("SELECT * FROM PRODUCT WHERE PRODUCT_NAME LIKE '%"+ [product_name]+"%'");
     console.log(product);
     res.render('links/product',{data:product});
 }); */
